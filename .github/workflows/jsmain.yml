@@ -69,7 +69,7 @@ GITHUB_TOKEN: ${{ secrets.SECRET_GIT }}
 SONAR_TOKEN: ${{ secrets.SECRET }}
 with:
 args: >
--Dsonar.organization=<nazwa organizacji w sonarcloud>
--Dsonar.projectKey=<nazwa projektu w sonarcloud>
+-Dsonar.organization=jgsidor
+-Dsonar.projectKey=jgsidor_ms-starwars
 projectBaseDir: ./
 
