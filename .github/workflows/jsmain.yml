@@ -65,11 +65,12 @@ jobs:
           - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@v1.6
         env:
-         GITHUB_TOKEN: ${{ secrets.SECRET_GIT }}
+          GITHUB_TOKEN: ${{ secrets.SECRET_GIT }}
           SONAR_TOKEN: ${{ secrets.SECRET }}
         with:
          args: >
-           -Dsonar.organization=jgsidor
-            -Dsonar.projectKey=jgsidor_ms-starwars
-          projectBaseDir: ./
+          -Dsonar.organization=jgsidor
+          -Dsonar.projectKey=jgsidor_ms-starwars
+         projectBaseDir: ./
+
 
