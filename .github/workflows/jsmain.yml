@@ -62,7 +62,7 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-          - name: SonarCloud Scan
+      - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@v1.6
         env:
           GITHUB_TOKEN: ${{ secrets.SECRET_GIT }}
