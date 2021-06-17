@@ -1,4 +1,4 @@
- # This is a basic workflow to help you get started with Actions
+# This is a basic workflow to help you get started with Actions
 name: CI
 # Controls when the action will run. 
 on:
@@ -19,14 +19,18 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+      
       - name: Install
         run: npm install
+        
       #7.dodaj fazę unit test =>
       - name: unit-test
         run : npm run unit-tests   
+        
       #8.dodaj fazę integration tests =>
       - name: integration-test
         run : npm run integration-tests 
+        
       #9.dodaj fazę test report =>
       - name: Test Report unit
         uses: dorny/test-reporter@v1
@@ -35,6 +39,7 @@ jobs:
           name: mocha Tests unit
           path: ./test-results.json
           reporter: mocha-json
+          
       #11.dodaj fazę dependency check =>
       - name: Depcheck
         uses: dependency-check/Dependency-Check_Action@main
@@ -48,7 +53,7 @@ jobs:
         uses: actions/upload-artifact@master
         with:
           name: Depcheck report
-          path: ${​{​github.workspace}​}​/reports
+          path: ${{github.workspace}}/reports
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: echo Hello, world!
@@ -57,11 +62,3 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-    
-    
- 
-    
-    
-  
-  
-
